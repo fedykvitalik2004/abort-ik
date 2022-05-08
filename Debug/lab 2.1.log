@@ -1,0 +1,6 @@
+﻿  Time.cpp
+  lab 2.1.cpp
+C:\Users\vitaliy\source\repos\lab 2.1\lab 2.1.cpp(9,6): warning C4101: a: неиспользованная локальная переменная
+C:\Users\vitaliy\source\repos\lab 2.1\lab 2.1.cpp(9,9): warning C4101: b: неиспользованная локальная переменная
+  Создание кода...
+  lab 2.1.vcxproj -> C:\Users\vitaliy\source\repos\lab 2.1\Debug\lab 2.1.exe
