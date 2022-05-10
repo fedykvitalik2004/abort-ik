@@ -1,5 +1,6 @@
 ﻿#include <iostream>
 #include "Time.h"
+#include "my_Error.h"
 
 using namespace std;
 
@@ -29,6 +30,10 @@ int main()
 			cerr << c->What() << endl;
 			delete c;
 		}
+		catch (my_Error& a) {
+			result = false;
+			cerr << a.What() << endl;
+		}
 	} while (!result);
 
 	cout << "In minutes: " << h.minutes() << endl;
@@ -44,6 +49,5 @@ int main()
 		cerr << a << endl;
 	}
 
-	cout << "Thats all";
 	return 0;
 }

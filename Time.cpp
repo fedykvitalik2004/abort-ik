@@ -1,4 +1,5 @@
 #include "Time.h"
+#include "my_Error.h"
 #include <iostream>
 #include <sstream>
 
@@ -12,8 +13,10 @@ Time::Time()
 
 Time::Time(int a, int b)
 {
-	if (a < 0 && (b < 0 || b >= 60))
+	if (a < 0 && b < 0)
 		throw bad_exception();
+	else if (a < 0 && b >= 60)
+		throw my_Error("Quantity of hours cannot be below 0 and quantity of minutes cannot be under 60");
 	else if (a < 0)
 		throw new Error("Quantity of hours cannot be below 0");
 	else if (b < 0 || b>=60)
@@ -110,8 +113,10 @@ istream& operator>>(istream& in, Time& r)
 	cout << "Hours="; in >> r.first;
 	cout << "Minutes="; in >> r.second;
 	
-	if (r.first < 0 && (r.second < 0 || r.second >= 60))
+	if (r.first < 0 && r.second < 0)
 		throw bad_exception();
+	else if (r.first < 0 && r.second >= 60)
+		throw my_Error("Quantity of hours cannot be below 0 and quantity of minutes cannot be under 60");
 	else if (r.first < 0)
 		throw new Error("Quantity of hours cannot be below 0");
 	else if (r.second < 0 || r.second >= 60)
